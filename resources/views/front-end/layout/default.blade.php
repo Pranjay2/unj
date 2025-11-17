@@ -58,6 +58,51 @@
                 background-color: #004d4d;
                 color: #ffffff;           
             }
+
+            #apdBtn{
+                position:fixed;
+                bottom:70px;
+                right:25px;
+                background:#0c8b79;
+                color:white;
+                padding:14px 16px;
+                border-radius:50%;
+                font-size:22px;
+                cursor:pointer;
+                box-shadow:0 4px 10px rgba(0,0,0,0.2);
+                z-index:999;
+            }
+
+            #apdModal{
+                display:none;
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                background:rgba(0,0,0,0.5);
+                z-index:998;
+                align-items:center;
+                justify-content:center;
+            }
+
+            #divModal{
+                background:white;
+                padding:25px;
+                max-width:400px;
+                border-radius:12px;
+                text-align:center;
+            }
+
+            #btnModalApd{
+                margin-top:10px;
+                padding:10px 20px;
+                background:#0c8b79;
+                color:white;
+                border:none;
+                border-radius:8px;
+                cursor:pointer;
+            }
         </style>
     </head>
 
@@ -69,6 +114,26 @@
         @include('front-end.layout.components.footer')
 
         <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <div id="apdBtn">🦺</div>
+
+        <div id="apdModal">
+            <div id="divModal">
+                <h2>⚠️ Peringatan Keselamatan</h2>
+                <p style="line-height:1.6;">
+                    Sebelum memasuki ruang praktik, pastikan Anda menggunakan APD lengkap dan mematuhi semua aturan keselamatan.
+                </p>
+                <button onclick="document.getElementById('apdModal').style.display='none'" id="btnModalApd">
+                    Saya Mengerti
+                </button>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('apdBtn').onclick = function() {
+                document.getElementById('apdModal').style.display = 'flex';
+            };
+        </script>
 
         <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="assets/vendor/php-email-form/validate.js"></script>

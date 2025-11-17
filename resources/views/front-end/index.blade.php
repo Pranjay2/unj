@@ -30,6 +30,16 @@
     @media (max-width:575px){
         .guide-header { gap:10px; }
     }
+
+    .alertApd{
+        background:#fff7d1;
+        border-left:6px solid #f4c542;
+        padding:18px 20px;
+        margin-top:25px;
+        border-radius:10px;
+        font-size:16px;
+        line-height:1.6;
+    }
 </style>
 
 @endsection
@@ -130,6 +140,15 @@
                             <li><i class="bi bi-check-circle-fill"></i> Ikuti Prosedur Penggunaan</li>
                         </ul>
                     </div>
+                </div>
+
+                <div class="alertApd">
+                    <strong style="font-size:18px;">⚠️ Peringatan Keselamatan Praktik</strong><br>
+                    • Wajib menggunakan APD (helm, sepatu keselamatan, rompi, masker).<br>
+                    • Gunakan alat sesuai prosedur dan arahan instruktur.<br>
+                    • Jagalah kebersihan area kerja dan kembalikan alat ke tempatnya.<br>
+                    • Dilarang makan/minum di ruang praktik.<br>
+                    • Segera laporkan jika ada kerusakan alat atau potensi bahaya.
                 </div>
 
                 <!-- <div class="info-wrapper">
