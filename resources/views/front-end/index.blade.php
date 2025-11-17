@@ -144,7 +144,7 @@
 
                 <div class="alertApd">
                     <strong style="font-size:18px;">⚠️ Peringatan Keselamatan Praktik</strong><br>
-                    • Wajib menggunakan APD (helm, sepatu keselamatan, rompi, masker).<br>
+                    • Wajib menggunakan APD (sarung tangan, sepatu keselamatan, jas lab).<br>
                     • Gunakan alat sesuai prosedur dan arahan instruktur.<br>
                     • Jagalah kebersihan area kerja dan kembalikan alat ke tempatnya.<br>
                     • Dilarang makan/minum di ruang praktik.<br>
