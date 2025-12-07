@@ -1,7 +1,7 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between" style="background-color: #006569;">
 
-        <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
             <img src="https://unj.ac.id/wp-content/uploads/2023/11/LOGO-UNJ_WEB_Artboard-2-NEW.png" 
                 alt="Logo UNJ" 
                 class="img-fluid" 
@@ -37,7 +37,7 @@
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted d-none" href="index.html#about">Get Started</a>
+        <a class="btn-getstarted d-none" href="/">Get Started</a>
 
     </div>
 </header>

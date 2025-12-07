@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Content extends Model
 {
   static $rules = [
-    'page' => 'required',
-    'content_type' => 'required',
+    // 'page' => 'required',
+    // 'content_type' => 'required',
     'title' => 'required',
   ];
 
-  protected $fillable = ['page', 'content_type', 'title', 'subtitle', 'url', 'body', 'file', 'file_dir', 'extra', 'created_by', 'updated_by'];
+  protected $fillable = ['page', 'content_type', 'category','title', 'subtitle', 'url', 'body', 'file', 'file_dir', 'extra', 'created_by', 'updated_by'];
 
   public function contentFiles()
   {

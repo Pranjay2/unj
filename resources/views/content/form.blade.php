@@ -1,14 +1,14 @@
 
-    <div class="form-floating">
+    <!-- <div class="form-floating">
         {{ Form::select('page', $contentPage, $content->page, ['class' => 'form-select mb-5' . ($errors->has('page') ? ' is-invalid' : ''), 'placeholder' => 'Select Page', 'required']) }}
         {{ Form::label('page') }}
         {!! $errors->first('page', '<p class="invalid-feedback">:message</p>') !!}
-    </div>
+    </div> -->
     
     <div class="form-floating">
-        {{ Form::select('content_type', $contentType, $content->content_type, ['class' => 'form-select mb-5' . ($errors->has('content_type') ? ' is-invalid' : ''), 'placeholder' => 'Select Content Type', 'required']) }}
-        {{ Form::label('content_type') }}
-        {!! $errors->first('content_type', '<p class="invalid-feedback">:message</p>') !!}
+        {{ Form::select('category', $category, $content->category, ['class' => 'form-select mb-5' . ($errors->has('category') ? ' is-invalid' : ''), 'placeholder' => 'Select Category', 'required']) }}
+        {{ Form::label('category') }}
+        {!! $errors->first('category', '<p class="invalid-feedback">:message</p>') !!}
     </div>
 
     <div class="form-floating mb-5">
@@ -17,7 +17,7 @@
         {!! $errors->first('title', '<p class="invalid-feedback">:message</p>') !!}
     </div>
     
-    <div class="form-floating mb-5">
+    <!-- <div class="form-floating mb-5">
         {{ Form::text('subtitle', $content->subtitle, ['class' => 'form-control' . ($errors->has('subtitle') ? ' is-invalid' : ''), 'placeholder' => 'Subtitle']) }}
         {{ Form::label('subtitle') }}
         {!! $errors->first('subtitle', '<p class="invalid-feedback">:message</p>') !!}
@@ -33,23 +33,23 @@
         {{ Form::text('extra', $content->extra, ['class' => 'form-control' . ($errors->has('extra') ? ' is-invalid' : ''), 'placeholder' => 'Extra']) }}
         {{ Form::label('extra') }}
         {!! $errors->first('extra', '<p class="invalid-feedback">:message</p>') !!}
-    </div>
+    </div> -->
 
     <div class="form-floating mb-5">
-        {{ Form::textarea('body', $content->body, ['class' => 'form-control' . ($errors->has('body') ? ' is-invalid' : ''), 'placeholder' => 'Body']) }}
+        {{ Form::textarea('body', $content->body, ['id' => 'body', 'class' => 'form-control' . ($errors->has('body') ? ' is-invalid' : ''), 'placeholder' => 'Body']) }}
         {{ Form::label('body') }}
         {!! $errors->first('body', '<p class="invalid-feedback">:message</p>') !!}
     </div>
 
-<div class="form-group mb-5">
+<!-- <div class="form-group mb-5">
     {{ Form::file('file', ['class' => 'form-control' . ($errors->has('file') ? ' is-invalid' : '')]) }}
 
     @if(!empty($content->file))
         <a href="{{ '/'.$content->file_dir.'/'.$content->file }}" class="btn btn-primary mt-5" target="_blank">{{ $content->file }}</a>
     @endif
     {!! $errors->first('file', '<p class="invalid-feedback">:message</p>') !!}
-</div>
-{{-- <div class="form-group">
+</div> -->
+<!-- {{-- <div class="form-group">
     {{ Form::label('extra') }}
     {{ Form::text('extra', $content->extra, ['class' => 'form-control' . ($errors->has('extra') ? ' is-invalid' : ''), 'placeholder' => 'Extra']) }}
     {!! $errors->first('extra', '<p class="invalid-feedback">:message</p>') !!}
@@ -64,9 +64,10 @@
             <button class="btn btn-danger btn-delete-content-file" data-id="{{ $v->id }}"><i class="fa fa-times pr-0"></i></button>
         </div>
     @endforeach
-</div>
+</div> -->
 <button type="submit" class="btn btn-primary">Submit</button>
 @section('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.7.0/tinymce.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#content_type').change(function() {
@@ -116,6 +117,20 @@
                 })
             });
             {!! $content->content_type == 'files' ? "$('#gallery-files').show();" : "$('#gallery-files').hide();" !!}
+        });
+
+        tinymce.init({
+            selector: '#body',
+            height: 500,
+            plugins: 'image link media table lists code',
+            toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist | link image media | code',
+            relative_urls: false,
+            remove_script_host: false,
+            document_base_url: '{{ url('/') }}/',
+            automatic_uploads: false,
+            images_upload_handler: function (blobInfo, success, failure) {
+                failure("Upload gambar dimatikan. Gunakan URL gambar dari Google Drive.");
+            }
         });
     </script>
 @endsection

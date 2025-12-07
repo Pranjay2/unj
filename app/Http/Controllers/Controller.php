@@ -25,4 +25,12 @@ class Controller extends BaseController
         'vision' => 'Vision',
         'files' => 'Files'
     ];
+
+    public $categoryBlog = [
+        'ilmu_ukur_tanah' => 'Ilmu Ukur Tanah',
+        'praktik_plumbing' => 'Praktik Plumbing',
+        'praktik_batu_beton' => 'Praktik Batu Beton',
+        'praktik_mekanika_tanah' => 'Praktik Mekanika Tanah',
+        'praktik_uji_bahan' => 'Praktik Uji bahan'
+    ];
 }

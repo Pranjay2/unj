@@ -18,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@index')->name('about');
+Route::get('/blog', 'PagesController@blog')->name('blog');
+Route::get('/blog/{slug}', 'PagesController@blog_detail')->name('blog_detail');
+Route::get('/blog-category/{category}', 'PagesController@blog_category')->name('blog_category');

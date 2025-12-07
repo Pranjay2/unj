@@ -8,6 +8,7 @@ use App\Models\ContentFile;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 /**
  * Class ContentController
@@ -57,6 +58,7 @@ class ContentController extends Controller
         $content = new Content();
         $contentType = $this->contentType;
         $contentPage = $this->contentPage;
+        $category = $this->categoryBlog;
 
         $pageTitle = self::$pageTitle;
         $pageBreadcrumbs = self::$pageBreadcrumbs;
@@ -66,12 +68,15 @@ class ContentController extends Controller
         ];
         $routePath = self::$routePath;
         
-        return view(self::$folderPath.'.create', compact('content', 'pageTitle', 'pageBreadcrumbs', 'routePath', 'contentType', 'contentPage'));
+        return view(self::$folderPath.'.create', compact('content', 'pageTitle', 'pageBreadcrumbs', 'routePath', 'contentType', 'contentPage','category'));
     }
 
     public function store(Request $request)
     {
         $req = $request->all();
+        $req['page'] = 'blog';
+        $req['content_type'] = 'blog';
+        $req['slug'] = Str::slug($request->title, '-');
         $req['created_by'] = Auth::user()->id;
         $req['updated_by'] = Auth::user()->id;
 
@@ -137,6 +142,7 @@ class ContentController extends Controller
         $content = Content::find($id);
         $contentType = $this->contentType;
         $contentPage = $this->contentPage;
+        $category = $this->categoryBlog;
 
         $pageTitle = self::$pageTitle;
         $pageBreadcrumbs = self::$pageBreadcrumbs;
@@ -146,7 +152,7 @@ class ContentController extends Controller
         ];
         $routePath = self::$routePath;
 
-        return view(self::$folderPath.'.edit', compact('content', 'pageTitle', 'pageBreadcrumbs', 'routePath', 'contentType', 'contentPage'));
+        return view(self::$folderPath.'.edit', compact('content', 'pageTitle', 'pageBreadcrumbs', 'routePath', 'contentType', 'contentPage','category'));
     }
 
     public function update(Request $request, $id)

@@ -42,7 +42,7 @@ class PagesController extends Controller
 
         $user = Auth::user();
         
-        $pageTitle = 'Triadhipa Logistics - One Best Expedition Solution for your Business Need';
+        $pageTitle = 'Universitas Negeri Jakarta - Web Prosedur Alat Dasar';
 
         return view('pages.login', compact('pageTitle'));
     }
