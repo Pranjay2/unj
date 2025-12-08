@@ -214,7 +214,7 @@
                     <div>
                         <h3>Ilmu Ukur Tanah</h3>
                         <p>Mata pelajaran yang mempelajari cara melakukan pengukuran di lapangan, seperti mengukur jarak, sudut, dan elevasi tanah. Materi ini penting untuk membuat peta, denah, dan perencanaan konstruksi.</p>
-                        <a href="service-details.html" class="read-more">Lihat Prosedur Alat Dasar <i class="bi bi-arrow-right"></i></a>
+                        <a href="{{ url('blog-category') }}/ilmu_ukur_tanah" class="read-more">Lihat Prosedur Alat Dasar <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div><!-- End Service Card -->
@@ -227,7 +227,7 @@
                     <div>
                         <h3>Praktik Plumbing</h3>
                         <p>Membahas dan melatih keterampilan pemasangan serta perawatan sistem perpipaan, baik untuk air bersih, air kotor, maupun instalasi sanitasi. Fokusnya pada teknik kerja pipa sesuai standar keselamatan dan kenyamanan.</p>
-                        <a href="service-details.html" class="read-more">Lihat Prosedur Alat Dasar <i class="bi bi-arrow-right"></i></a>
+                        <a href="{{ url('blog-category') }}/praktik_plumbing" class="read-more">Lihat Prosedur Alat Dasar <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div><!-- End Service Card -->
@@ -240,7 +240,7 @@
                     <div>
                         <h3>Praktik Batu Beton</h3>
                         <p>Berisi praktik pembuatan dan pengujian konstruksi dari batu dan beton. Peserta didik belajar cara membuat campuran beton, uji kualitas, hingga penerapan dalam pekerjaan dinding dan struktur sederhana.</p>
-                        <a href="service-details.html" class="read-more">Lihat Prosedur Alat Dasar <i class="bi bi-arrow-right"></i></a>
+                        <a href="{{ url('blog-category') }}/praktik_batu_beton" class="read-more">Lihat Prosedur Alat Dasar <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div><!-- End Service Card -->
@@ -253,7 +253,7 @@
                     <div>
                         <h3>Praktik Mekanika Tanah</h3>
                         <p>Mempelajari sifat-sifat tanah melalui uji laboratorium dan lapangan. Tujuannya agar siswa mampu menganalisis kekuatan tanah, daya dukung, dan perilaku tanah terhadap beban konstruksi.</p>
-                        <a href="service-details.html" class="read-more">Lihat Prosedur Alat Dasar <i class="bi bi-arrow-right"></i></a>
+                        <a href="{{ url('blog-category') }}/praktik_mekanika_tanah" class="read-more">Lihat Prosedur Alat Dasar <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div><!-- End Service Card -->
@@ -266,7 +266,7 @@
                     <div>
                         <h3>Praktik Uji Bahan</h3>
                         <p>Fokus pada pengujian material bangunan (seperti semen, baja, beton, dan kayu) untuk mengetahui kualitas, kekuatan, serta kelayakan penggunaannya dalam konstruksi.</p>
-                        <a href="service-details.html" class="read-more">Lihat Prosedur Alat Dasar <i class="bi bi-arrow-right"></i></a>
+                        <a href="{{ url('blog-category') }}/praktik_uji_bahan" class="read-more">Lihat Prosedur Alat Dasar <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div><!-- End Service Card -->
