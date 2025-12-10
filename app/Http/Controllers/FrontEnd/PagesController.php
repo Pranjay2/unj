@@ -39,7 +39,7 @@ class PagesController extends Controller
 
     public function blog_category($category)
     {
-        $blog   = Content::where('category', $category)->get();
+        $blog = Content::whereJsonContains('category', $category)->get();
 
         return view('front-end.blog', compact('blog'));
     }
