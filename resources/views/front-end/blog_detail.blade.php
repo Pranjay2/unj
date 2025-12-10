@@ -1,156 +1,308 @@
 @extends('front-end.layout.default')
 @section('styles')
-
 <style>
-    #buttondafsel {
-        max-width: 260px;
+    .blog-title {
+        color: #212121;
+        font-family: Inter, system-ui, sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: -0.24px;
+        margin-bottom: 8px;
     }
 
-    @media screen and (max-width:1000px) {
-        #kemobile {
-            text-align: center;
-        }
+    .artikel {
+        color: #444;
+        font-family: Inter, system-ui, sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.7;
+        letter-spacing: -0.003px;
     }
 
-    @media screen and (max-width:600px) {
-        #kemobile {
-            text-align: center;
-        }
-
-        #buttondafsel {
-            font-size: 13px;
-            margin-right: 10px;
-        }
-
-
+    /* Paragraphs */
+    .artikel p {
+        margin-bottom: 18px;
     }
 
-    @media screen and (max-width:1300px) {
-        #tulisangede {
-            font-size: 20px;
-        }
+    /* Auto-beautify images */
+    .artikel img,  {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 22px auto;
+        border-radius: 10px;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.08);
     }
 
-    @media screen and (max-width:1300px) {
-        #tulisangede {
+    .artikel iframe {
+        width: 100%;
+        max-width: 100%;
+        height: 380px; /* bisa kamu sesuaikan */
+        display: block;
+        margin: 22px auto;
+        border-radius: 10px;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+        border: none;
+    }
+
+    /* Blockquote */
+    .artikel blockquote {
+        margin: 22px 0;
+        padding: 14px 18px;
+        background: #f3f6ff;
+        border-left: 4px solid #006569;
+        border-radius: 8px;
+        color: #1a2a55;
+        font-style: normal;
+    }
+
+    /* Code / Pre */
+    .artikel pre,
+    .artikel code {
+        background: #0d1b2a;
+        color: #e0e6ef;
+        padding: 14px;
+        font-size: 15px;
+        border-radius: 10px;
+        overflow-x: auto;
+        font-family: ui-monospace, monospace;
+        margin: 18px 0;
+        display: block;
+    }
+
+    /* Responsive heading inside content */
+    .artikel h2, .artikel h3, .artikel h4 {
+        margin-top: 30px;
+        margin-bottom: 12px;
+        font-weight: 700;
+        color: #1a1a1a;
+    }
+
+    /* Footer author/date section */
+    .meta-text {
+        color: #616161;
+        font-size: 14px;
+        margin-top: 2px;
+    }
+
+    /* LIST (ul/ol) */
+    .artikel ul, .artikel ol {
+        padding-left: 24px;
+        margin-bottom: 18px;
+    }
+
+    /* --- IMAGE RESPONSIVE FIX --- */
+    .artikel img {
+        height: auto !important;
+        width: auto !important;
+        max-width: 100% !important;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 640px) {
+        .blog-title {
+            font-size: 26px;
+        }
+        .artikel {
             font-size: 17px;
         }
     }
-    
-    .leading-5 {
-        margin-top: 16px !important;
+
+    .recommend-thumb {
+        width: 100%;
     }
 
-    .blog-title {
-        color: var(--Neutral-100, #212121);
-        font-family: Inter;
+    .recommend-thumb img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+
+    /* --- PREMIUM ARTICLE UPGRADE --- */
+
+    /* Stylish H2 */
+    .artikel h2 {
+        font-size: 28px;
+        border-left: 5px solid #006569;
+        padding-left: 14px;
+        margin-top: 40px;
+        margin-bottom: 16px;
+        color: #111;
+        letter-spacing: -0.4px;
+    }
+
+    /* Stylish H3 */
+    .artikel h3 {
         font-size: 24px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 36px; /* 150% */
-        letter-spacing: -0.24px;
-        rgba(33, 33, 33, 1)
+        margin-top: 32px;
+        color: #222;
     }
 
-    .artikel{
-        color: var(--Neutral-80, #616161);
-        font-family: Inter;
+    /* Stylish H4 */
+    .artikel h4 {
+        font-size: 20px;
+        margin-top: 28px;
+        color: #333;
+    }
+
+    /* Paragraph improvement */
+    .artikel p {
+        color: #2c2c2c;
+        line-height: 1.75;
+        margin-bottom: 22px;
+    }
+
+    /* Highlight text */
+    .artikel mark {
+        background: #fff3a3;
+        padding: 3px 6px;
+        border-radius: 4px;
+    }
+
+    /* Horizontal rule upgrade */
+    .artikel hr {
+        border: none;
+        border-top: 1px solid #e4e4e4;
+        margin: 34px 0;
+    }
+
+    /* Premium Blockquote */
+    .artikel blockquote {
+        background: #eef4ff;
+        border-left: 6px solid #006569;
+        padding: 18px 22px;
+        border-radius: 12px;
+        color: #062a5e;
         font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 27px;
-        letter-spacing: -0.003px;
-        rgba(97, 97, 97, 1)
+        font-style: italic;
+        margin: 30px 0;
     }
 
+    /* Premium image look */
+    .artikel img {
+        border-radius: 16px !important;
+        box-shadow: 0px 14px 32px rgba(0,0,0,0.12) !important;
+    }
+
+    /* Premium list spacing */
+    .artikel ul li,
+    .artikel ol li {
+        margin-bottom: 10px;
+        padding-left: 2px;
+    }
+
+    /* Table styling */
+    .artikel table {
+        width: 100%;
+        margin: 22px 0;
+        border-collapse: collapse;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    .artikel table th {
+        background: #f3f6ff;
+        padding: 12px;
+        border-bottom: 2px solid #d5ddff;
+        text-align: left;
+    }
+
+    .artikel table td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Code block premium */
+    .artikel pre {
+        background: #0d1b2a !important;
+        padding: 20px !important;
+        border-radius: 14px !important;
+        font-size: 16px !important;
+        color: #dff1ff !important;
+    }
+
+    /* Make first paragraph nicer */
+    .artikel > p:first-of-type {
+        font-size: 20px;
+        font-weight: 500;
+        color: #222;
+    }
 </style>
-
 @endsection
+
+
 @section('content')
-    <main class="main">
-        <section id="blog">
-            <div class="container mt-5 mb-5">
-                <div class="row">
-
-                    <div class="col-lg-8">
-
-                        <h1 class="mt-4 blog-title">{{ $blog->title }}</h5>
-
-                        <div class="d-flex justify-content-between mt-3">
-                            <div>
-                                <p>
-                                    {{ $blog->created_at->format('d M Y') }}
-                                </p>
-                            </div>
-                            <div class="d-flex" style="gap: 20px">
-                                <a href="#">
-                                    <img src="{{ asset('assets/img/socmed/whatsapp.png') }}" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="{{ asset('assets/img/socmed/facebook.png') }}" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="{{ asset('assets/img/socmed/twitter.png') }}" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="{{ asset('assets/img/socmed/instagram.png') }}" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="{{ asset('assets/img/socmed/linked.png') }}" alt="">
-                                </a>
-                            </div>
+<main class="main">
+    <section id="blog">
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    {{-- Judul Artikel --}}
+                    <h1 class="mt-4 blog-title">{{ $blog->title }}</h1>
+                    {{-- Tanggal & Social Share --}}
+                    <div class="d-flex justify-content-between mt-3">
+                        <div class="meta-text">
+                            {{ $blog->created_at->format('d M Y') }}
                         </div>
-            
-                        <div class="mt-4 artikel">
-                            {!! $blog->body !!}
+
+                        <div class="d-flex" style="gap: 20px">
+                            <a href="#"><img src="{{ asset('assets/img/socmed/whatsapp.png') }}" alt=""></a>
+                            <a href="#"><img src="{{ asset('assets/img/socmed/facebook.png') }}" alt=""></a>
+                            <a href="#"><img src="{{ asset('assets/img/socmed/twitter.png') }}" alt=""></a>
+                            <a href="#"><img src="{{ asset('assets/img/socmed/instagram.png') }}" alt=""></a>
+                            <a href="#"><img src="{{ asset('assets/img/socmed/linked.png') }}" alt=""></a>
                         </div>
                     </div>
-
-                    <div class="col-lg-4">
-
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h2 style="padding: 2px 10px;" class="blog-title">
-                                    Alat Lainnya
-                                </h2>
-                            </div>
-                        </div>
-
-                        @foreach($recommend as $bv)
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <a href="{{ url('blog') }}/{{ $bv->slug }}" style="text-decoration: none;color: inherit">
-                                        <div class="d-flex flex-row-reverse flex-lg-row my-2 my-md-0">
-
-                                            {{-- Konten Teks --}}
-                                            <div class="col-6 d-flex align-items-center">
-                                                <div>
-                                                    <div class="d-flex justify-content-between mt-3">
-                                                        <div>
-                                                            <p>{{ $bv->created_at->format('d M Y') }}</p>
-                                                        </div>
-                                                    </div>
-
-                                                    <h3 class="title-style-3 blog-title" style="font-size:24px">
-                                                        {{ $bv->title }}
-                                                    </h3>
-
-                                                    <p style="font-size: 14px;">
-                                                        {{ Str::limit(strip_tags($bv->body), 120) }}
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                        @endforeach
-                        
+                    {{-- Isi Artikel --}}
+                    <div class="mt-4 artikel">
+                        {!! $blog->body !!}
                     </div>
                 </div>
+
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="blog-title" style="padding: 2px 10px; font-size:22px;">
+                                Alat Lainnya
+                            </h2>
+                        </div>
+                    </div>
+                    @foreach($recommend as $bv)
+                        @php
+                            $thumb = getFirstImage($bv->body);
+                        @endphp
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <a href="{{ url('blog') }}/{{ $bv->slug }}" style="text-decoration: none;color: inherit">
+                                    <div class="d-flex flex-row-reverse flex-lg-row my-2 my-md-0">
+                                        <div class="card col-12 border-0 m-0 m-md-3 p-0">
+                                            <div class="recommend-thumb">
+                                                <img src="{{ $thumb }}" 
+                                                    alt="{{ $bv->title }}">
+                                            </div>
+
+                                            <div>
+                                                <p class="mt-3">
+                                                    {{ $bv->created_at->format('d M Y') }}
+                                                </p>
+
+                                                <h3 class="title-style-3 blog-title" style="font-size:24px">{{ $bv->title }}</h3>
+
+                                                <p style="font-size: 14px; color:#666;">
+                                                    {{ Str::limit(strip_tags($bv->body), 120) }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
 @endsection

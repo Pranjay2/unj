@@ -5,7 +5,7 @@
             <img src="https://unj.ac.id/wp-content/uploads/2023/11/LOGO-UNJ_WEB_Artboard-2-NEW.png" 
                 alt="Logo UNJ" 
                 class="img-fluid" 
-                style="max-width: 200px;">
+                style="max-width: 300px;">
         </a>
 
         <nav id="navmenu" class="navmenu">

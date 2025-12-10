@@ -28,4 +28,10 @@ class Content extends Model
   {
       return $this->belongsTo('App\Models\User', 'updated_by', 'id');
   }
+
+  public function getFirstImageAttribute()
+  {
+    preg_match('/<img[^>]+src=[\'"]([^\'"]+)[\'"]/i', $this->body, $matches);
+    return $matches[1] ?? null;
+  }
 }
