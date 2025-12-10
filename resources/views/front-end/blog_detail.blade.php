@@ -27,8 +27,8 @@
 
     /* Auto-beautify images */
     .artikel img,  {
-        max-width: 100%;
-        height: auto;
+        /*max-width: 100%;
+        height: auto;*/
         display: block;
         margin: 22px auto;
         border-radius: 10px;
@@ -36,9 +36,6 @@
     }
 
     .artikel iframe {
-        width: 100%;
-        max-width: 100%;
-        height: 380px; /* bisa kamu sesuaikan */
         display: block;
         margin: 22px auto;
         border-radius: 10px;
@@ -94,8 +91,8 @@
 
     /* --- IMAGE RESPONSIVE FIX --- */
     .artikel img {
-        height: auto !important;
-        width: auto !important;
+        /*height: auto !important;
+        width: auto !important;*/
         max-width: 100% !important;
     }
 
@@ -238,7 +235,7 @@
     <section id="blog">
         <div class="container mt-5 mb-5">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     {{-- Judul Artikel --}}
                     <h1 class="mt-4 blog-title">{{ $blog->title }}</h1>
                     {{-- Tanggal & Social Share --}}
@@ -259,47 +256,6 @@
                     <div class="mt-4 artikel">
                         {!! $blog->body !!}
                     </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2 class="blog-title" style="padding: 2px 10px; font-size:22px;">
-                                Alat Lainnya
-                            </h2>
-                        </div>
-                    </div>
-                    @foreach($recommend as $bv)
-                        @php
-                            $thumb = getFirstImage($bv->body);
-                        @endphp
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <a href="{{ url('blog') }}/{{ $bv->slug }}" style="text-decoration: none;color: inherit">
-                                    <div class="d-flex flex-row-reverse flex-lg-row my-2 my-md-0">
-                                        <div class="card col-12 border-0 m-0 m-md-3 p-0">
-                                            <div class="recommend-thumb">
-                                                <img src="{{ $thumb }}" 
-                                                    alt="{{ $bv->title }}">
-                                            </div>
-
-                                            <div>
-                                                <p class="mt-3">
-                                                    {{ $bv->created_at->format('d M Y') }}
-                                                </p>
-
-                                                <h3 class="title-style-3 blog-title" style="font-size:24px">{{ $bv->title }}</h3>
-
-                                                <p style="font-size: 14px; color:#666;">
-                                                    {{ Str::limit(strip_tags($bv->body), 120) }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    @endforeach
                 </div>
             </div>
         </div>
