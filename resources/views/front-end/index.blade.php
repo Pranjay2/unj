@@ -178,8 +178,8 @@
             <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="image-wrapper">
                     <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
-                        <img src="assets/img/lab-plambing.jpeg" alt="Business Meeting" class="img-fluid main-image rounded-4">
-                        <img src="assets/img/showing-building-blueprint.jpg" alt="Team Discussion" class="img-fluid small-image rounded-4">
+                        <img src="assets/img/lab-plambing.jpeg" alt="Lab Plumbing" class="img-fluid main-image rounded-4">
+                        <img src="assets/img/lab unj.jpeg" alt="Baju Lab" class="img-fluid small-image rounded-4">
                     </div>
                     <!-- <div class="experience-badge floating">
                         <h3>15+ <span>Years</span></h3>
