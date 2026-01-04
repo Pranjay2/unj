@@ -12,7 +12,7 @@ class Content extends Model
     'title' => 'required',
   ];
 
-  protected $fillable = ['page', 'content_type', 'category','title', 'subtitle', 'url', 'body', 'file', 'file_dir', 'extra', 'created_by', 'updated_by'];
+  protected $fillable = ['page', 'content_type', 'category', 'slug','title', 'subtitle', 'url', 'body', 'file', 'file_dir', 'extra', 'created_by', 'updated_by'];
 
   public function contentFiles()
   {

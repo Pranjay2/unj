@@ -74,11 +74,15 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         $req = $request->all();
+        // dd($req);
         $req['page'] = 'blog';
         $req['content_type'] = 'blog';
-        $req['slug'] = Str::slug($request->title, '-');
+        $req['slug'] = Str::slug($req['subtitle'], '-');
         $req['created_by'] = Auth::user()->id;
         $req['updated_by'] = Auth::user()->id;
+        $req['category'] = json_encode([$request->category]);
+
+        // dd($req);
 
 
         if ($request->file('file')) {
@@ -159,6 +163,8 @@ class ContentController extends Controller
     {
         $content = Content::find($id);
         $req['updated_by'] = Auth::user()->id;
+        $req['slug'] = Str::slug($request->subtitle, '-');
+        $req['category'] = json_encode([$request->category]);
 
         $req = $request->all();
         if ($request->file('file')) {
